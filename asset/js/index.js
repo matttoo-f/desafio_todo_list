@@ -9,9 +9,9 @@ const taskList = document.getElementById("listaTareas")
 
 // variables---------------------------------------->
 
-let taskArray = [{id: Date.now(), task: "Respasar guía de estudios", ready: true},
-                 {id: Date.now(), task: "Comenzar desafío", ready: false},
-                 {id: Date.now(), task: "finalizar desafío", ready: false},
+let taskArray = [{id: 1500, task: "Respasar guía de estudios", ready: false},
+                 {id: 2000, task: "Comenzar desafío", ready: false},
+                 {id: 2500, task: "finalizar desafío", ready: false},
 ]
 
 
@@ -77,7 +77,7 @@ function btnReady(id){
     if (index !== -1 && !taskArray[index].ready){
         taskArray[index].ready = true
         
-        let html = "";
+        let html = ""
         for (let task of taskArray) {
             let taskClass = task.ready ? 'ready' : 'pending';
             html += `<tr class="${taskClass}"><td>${task.id}</td><td>${task.task}</td><td><button onclick="btnReady(${task.id})">Ready</button></td><td><button onclick="borrar(${task.id})">X</button></td></tr>`;
